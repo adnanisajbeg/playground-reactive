@@ -15,6 +15,7 @@ public class BookService {
 
     public Mono<Book> addBook(Book book) {
         Mono<Book> save = bookRepository.save(book);
+        save.subscribe();
         return save;
     }
 
